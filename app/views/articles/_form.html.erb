@@ -1,0 +1,40 @@
+<%= form_for @article do |f| %>
+    <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@article.errors.count, "error") %>
+            prohibited this article from being saved:
+          </h2>
+          <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <!-- 设置文章内容的输入框大小-->
+    <style>
+        #article_content {height: 300px; width: 500px}
+    </style>
+
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :author%>
+      <%= f.text_field :author%> <!-- text_field是input标签 -->
+    </p>
+
+    <p>
+      <%= f.label :content%><br>
+      <%= f.text_area :content%> <!-- text_area是textarea标签 -->
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>

@@ -1,0 +1,40 @@
+<%= render 'header' %>
+
+<!-- 广告位 -->
+<div class="container">                                                                                
+    <div class="row row-content">                                                                        
+        <h5 align=center>---广----告----位---</h2>                                                         
+    </div>                                                                                               
+</div>                                                                                                 
+
+<!-- 内容 --> 
+<div class="container">
+    <div class="row row-content">
+        <h3 align=center>新鲜出炉</h3>
+        <h4 align=center>这里是一些最新的和高度热评的文章</h4>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- 热门内容 -->                                                                                  
+        <div class="col-md-6 col-sm-12">
+            <% @new_articles.each do |article| %>
+                <ul class="list-unstyled" style="text-align: center; font-size: 18px">
+                    <li><%= link_to article.title, article_path(article) %></li>
+                </ul>
+            <% end %>
+        </div>
+
+        <!-- 实时更新 -->
+        <div class="col-md-6 col-sm-12">
+            <ul class="list-unstyled" style="text-align: center">
+                <li><a href="http://baidu.com">sogou</a></li>
+                <li><a href="http://baidu.com">sogou</a></li> 
+                <li><a href="http://baidu.com">sogou</a></li>
+                <li><a href="http://baidu.com">sogou</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<%= render 'footer' %>

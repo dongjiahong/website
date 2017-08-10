@@ -1,0 +1,25 @@
+<%= render 'header' %>
+
+<% provide(:title, @article.title) %>
+
+<div style="background: lightblue">
+    <p>
+        <h1 style="text-align:center"> <%= @article.title %> </h1>
+    </p>
+
+    <p>
+    <h5 style="text-align:center"> <%= @article.author %> </h5>
+    </p>
+
+    <div class="container">
+        <div class="row">
+            <!-- 热门内容 -->                                                                                  
+            <div class="col-md-8 col-sm-12 col-md-offset-2">
+                <%= @article.content %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Back', articles_path %>

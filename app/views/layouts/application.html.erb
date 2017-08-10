@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- 设置页面的title，有助于seo，默认为‘奇闻杂潭’ -->
+      <title> <%= content_for?(:title) ? yield(:title) : '奇闻杂潭' %> </title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
